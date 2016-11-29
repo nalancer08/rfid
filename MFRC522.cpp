@@ -1629,10 +1629,10 @@ void MFRC522::PICC_DumpMifareClassicSectorToSerialWithOutBullShit(Uid *uid,			//
 		blockAddr = firstBlock + blockOffset;
 		// Sector number - only on first line
 		if (isSectorTrailer) {
-			if(sector < 10)
+			if(sector < 10) { /**/ }
 				//Serial.print(F("   ")); // Pad with spaces
-			else
-				//Serial.print(F("  ")); // Pad with spaces
+			else { /**/ }
+			//Serial.print(F("  ")); // Pad with spaces
 			//Serial.print(sector);
 			//Serial.print(F("   "));
 		}
@@ -1640,12 +1640,12 @@ void MFRC522::PICC_DumpMifareClassicSectorToSerialWithOutBullShit(Uid *uid,			//
 			//Serial.print(F("       "));
 		}
 		// Block number
-		if(blockAddr < 10)
+		if(blockAddr < 10) { /**/ }
 			//Serial.print(F("   ")); // Pad with spaces
 		else {
-			if(blockAddr < 100)
+			if(blockAddr < 100) { /**/ }
 				//Serial.print(F("  ")); // Pad with spaces
-			else
+			else { /**/ }
 				//Serial.print(F(" ")); // Pad with spaces
 		}
 		//Serial.print(blockAddr);
@@ -1669,9 +1669,9 @@ void MFRC522::PICC_DumpMifareClassicSectorToSerialWithOutBullShit(Uid *uid,			//
 		}
 		// Dump data
 		for (byte index = 0; index < 16; index++) {
-			if(buffer[index] < 0x10)
+			if(buffer[index] < 0x10) { /**/ }
 				//Serial.print(F(" 0"));
-			else
+			else { /**/ }
 				//Serial.print(F(" "));
 			Serial.print(buffer[index], HEX);
 			if ((index % 4) == 3) {
